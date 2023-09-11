@@ -6,6 +6,6 @@ namespace Quest01
 {
     enum JobTitle
     {
-        mafia,
+        Mafia,
     }
 }

@@ -66,5 +66,29 @@ namespace Quest01
             }
             this.EmploymentDate = employment;
         }
+        public int GetAge()
+        {
+            DateTime currentDate = DateTime.Today;
+            if (currentDate < DayOfBirth)
+            {
+                Console.WriteLine("Он што, из будущего?");
+                return 0;
+            }
+            int age = currentDate.Year - DayOfBirth.Year;
+            if (currentDate.Month < DayOfBirth.Month || currentDate.Month == DayOfBirth.Month && currentDate.Day < DayOfBirth.Day)
+            {
+                age--;
+            }
+            return age;
+        }
+        public void GetInfo()
+        {
+            Console.WriteLine($"Full name: {FullName}");
+            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Job title: {Job}");
+            Console.WriteLine($"Wage: {Wage}");
+            Console.WriteLine($"DOB: {DayOfBirth}");
+            Console.WriteLine($"Hired: {EmploymentDate}");
+        }
     }
 }

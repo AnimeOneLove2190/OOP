@@ -14,12 +14,12 @@ namespace Quest01
             EmployeeService employeeService = new EmployeeService();
             employeeOne.FullName = "Зубенко Михаил Петрович";
             employeeOne.Id = 0;
-            employeeOne.Job = JobTitle.mafia;
+            employeeOne.Job = JobTitle.Mafia;
             employeeOne.Wage = 22500;
             employeeOne.DayOfBirth = new DateTime(1983, 07, 18);
             employeeOne.EmploymentDate = new DateTime(2001, 08, 19);
-            employeeService.GetInfo(employeeOne);
-            int ageOne = employeeService.GetAge(employeeOne);
+            employeeOne.GetInfo();
+            int ageOne = employeeOne.GetAge();
             Console.WriteLine(ageOne);
         }
     }
