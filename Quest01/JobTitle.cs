@@ -7,5 +7,8 @@ namespace Quest01
     enum JobTitle
     {
         Mafia,
+        RoyalArmySpecialOfficer,
+        AutoRecordingDoll,
+        CommanderOfTheParadiseIslandSurveyCorps
     }
 }
