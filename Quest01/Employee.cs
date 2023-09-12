@@ -89,6 +89,7 @@ namespace Quest01
             Console.WriteLine($"Wage: {Wage}");
             Console.WriteLine($"DOB: {DayOfBirth}");
             Console.WriteLine($"Hired: {EmploymentDate}");
+            Console.WriteLine($"Age: {GetAge()}");
         }
     }
 }
