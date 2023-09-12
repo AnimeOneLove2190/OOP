@@ -10,8 +10,8 @@ namespace Quest01
         {
             if (list == null || list.Count == 0)
             {
-                Console.WriteLine("Сработала защита в GetPersonWithMaxAge");
-                return null;
+                Console.WriteLine("Сработала защита в GetEmployeesListMaxWage");
+                return list;
             }
             List<Employee> employeesMaxWageList = new List<Employee>();
             Employee employeeWithMaxWage = list[0];
@@ -35,8 +35,8 @@ namespace Quest01
         {
             if (list == null || list.Count == 0)
             {
-                Console.WriteLine("Сработала защита в GetPersonWithMaxAge");
-                return null;
+                Console.WriteLine("Сработала защита в GetEmployeesListMinWage");
+                return list;
             }
             List<Employee> employeesMinWageList = new List<Employee>();
             Employee employeeWithMinWage = list[0];
@@ -60,8 +60,8 @@ namespace Quest01
         {
             if (list == null || list.Count == 0)
             {
-                Console.WriteLine("Сработала защита в GetPersonWithMaxAge");
-                return null;
+                Console.WriteLine("Сработала защита в GetEmployeesListMaxAge");
+                return list;
             }
             List<Employee> employeesMaxAgeList = new List<Employee>();
             Employee employeeWithMaxAge = list[0];
@@ -85,8 +85,8 @@ namespace Quest01
         {
             if (list == null || list.Count == 0)
             {
-                Console.WriteLine("Сработала защита в GetPersonWithMaxAge");
-                return null;
+                Console.WriteLine("Сработала защита в GetEmployeesListMinAge");
+                return list;
             }
             List<Employee> employeesMinAgeList = new List<Employee>();
             Employee employeeWithMinAge = list[0];
