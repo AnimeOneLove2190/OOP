@@ -46,6 +46,22 @@ namespace Quest01
             employeesMaxAgeList[0].GetInfo();
             List<Employee> employeesMinAgeList = employeeService.GetEmployeesListMinAge(employeeList);
             employeesMinAgeList[0].GetInfo();
+            //Feature530
+            Helicopter helicopter = new Helicopter();
+            helicopter.Owner = "Ростех";
+            helicopter.Speed = 250;
+            helicopter.Carrying = 4000;
+            Console.WriteLine(helicopter.GetInfo());
+            Car hayachi = new Car();
+            hayachi.Owner = "Давлетшин Даниил";
+            hayachi.Speed = 110;
+            hayachi.Сonsumption = 6;
+            Console.WriteLine(hayachi.GetInfo());
+            Boat meteor = new Boat();
+            meteor.Owner = "Зеленодольский завод имени А. М.Горького";
+            meteor.Speed = 77;
+            meteor.Displacement = 53;
+            Console.WriteLine(meteor.GetInfo());
         }
     }
 }
