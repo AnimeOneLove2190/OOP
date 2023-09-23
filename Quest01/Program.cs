@@ -89,6 +89,7 @@ namespace Quest01
             veteranOfLabourran.Webcam = true;
             veteranOfLabourran.BatteryCapacity = 202;
             Console.WriteLine(veteranOfLabourran.GetInfo());
+
         }
     }
 }
