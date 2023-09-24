@@ -13,11 +13,6 @@ namespace Quest01
         public List<string> NameList { get; set; }
         public Person CreatePerson()
         {
-            if (NameList == null || NameList.Count == 0)
-            {
-                Console.WriteLine("Список имён пуст");
-                Name = null;
-            }
             if (MinAge < 0)
             {
                 Console.WriteLine("Минимальный возраст не может быть отрицательным");
@@ -29,8 +24,17 @@ namespace Quest01
                 MinHeight = 0;
             }
             Random godOfAll = new Random();
-            int numOfName = godOfAll.Next(0, NameList.Count);
-            Name = NameList[numOfName];
+            if (NameList == null || NameList.Count == 0)
+            {
+                Console.WriteLine("Список имён пуст");
+                Name = null;
+            }
+            else
+            {
+
+                int numOfName = godOfAll.Next(0, NameList.Count);
+                Name = NameList[numOfName];
+            }
             Age = godOfAll.Next(MinAge, MaxAge);
             Height = godOfAll.Next(MinHeight, MaxHeight);
             Person createdPerson = new Person(Name, Age, Height);
