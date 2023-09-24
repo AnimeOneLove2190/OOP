@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Quest01
 {
-    class Division : Calculate
+    class Division : Calculate, ICalculable
     {
         public override int DoOperation(int numOne, int numTwo)
         {
