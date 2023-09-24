@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Quest01
 {
-    class Difference : Calculate
+    class Difference : Calculate, ICalculable
     {
         public override int DoOperation(int numOne, int numTwo)
         {
