@@ -91,7 +91,9 @@ namespace Quest01
             Console.WriteLine(veteranOfLabourran.GetInfo());
             //Feature532
             //feature533
-
+            //Ня
+            string nya = "Ня";
+            Console.WriteLine(nya);
         }
     }
 }
