@@ -94,6 +94,9 @@ namespace Quest01
             //Мяв
             string meow = "Мяв";
             Console.WriteLine(meow);
+            //Ня
+            string nya = "Ня";
+            Console.WriteLine(nya);
         }
     }
 }
