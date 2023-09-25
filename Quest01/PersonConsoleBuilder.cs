@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Quest01
 {
-    class PersonConsoleBuilder : Person, IPersonBuilder
+    class PersonConsoleBuilder :  IPersonBuilder
     {
         public Person CreatePerson()
         {
@@ -15,7 +15,6 @@ namespace Quest01
                 Console.WriteLine("Имя персонажа не может быть пустым");
                 tempName = Console.ReadLine();
             }
-            Name = tempName;
             Console.WriteLine("Введите возраст персонажа");
             int tempAge = int.Parse(Console.ReadLine());
             while (tempAge < 0)
@@ -23,7 +22,6 @@ namespace Quest01
                 Console.WriteLine("Возраст персонажа не может быть отрицательным");
                 tempAge = int.Parse(Console.ReadLine());
             }
-            Age = tempAge;
             Console.WriteLine("Введите рост персонажа");
             int tempHeight = int.Parse(Console.ReadLine());
             while (tempHeight < 0)
@@ -31,8 +29,7 @@ namespace Quest01
                 Console.WriteLine("Рост персонажа не может быть отрицательным");
                 tempHeight = int.Parse(Console.ReadLine());
             }
-            Height = tempHeight;
-            Person createdPerson = new Person(Name, Age, Height);
+            Person createdPerson = new Person(tempName, tempAge, tempHeight);
             return createdPerson;
         }
     }

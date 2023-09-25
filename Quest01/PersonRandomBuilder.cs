@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Quest01
 {
-    class PersonRandomBuilder : Person, IPersonBuilder
+    class PersonRandomBuilder : IPersonBuilder
     {
         public int MinAge { get; set; }
         public int MaxAge { get; set; }
@@ -24,20 +24,19 @@ namespace Quest01
                 MinHeight = 0;
             }
             Random godOfAll = new Random();
+            string tempName = null;
             if (NameList == null || NameList.Count == 0)
             {
                 Console.WriteLine("Список имён пуст");
-                Name = null;
             }
             else
             {
-
                 int numOfName = godOfAll.Next(0, NameList.Count);
-                Name = NameList[numOfName];
+                tempName = NameList[numOfName];
             }
-            Age = godOfAll.Next(MinAge, MaxAge);
-            Height = godOfAll.Next(MinHeight, MaxHeight);
-            Person createdPerson = new Person(Name, Age, Height);
+            int tempAge = godOfAll.Next(MinAge, MaxAge);
+            int tempHeight = godOfAll.Next(MinHeight, MaxHeight);
+            Person createdPerson = new Person(tempName, tempAge, tempHeight);
             return createdPerson;
         }
     }
