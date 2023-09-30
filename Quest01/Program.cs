@@ -1,5 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Quest01.Interfaces;
+using Quest01.Messages;
+using Quest01.Transports;
+using Quest01.Computers;
+using Quest01.Flats;
+using Quest01.Shapes;
+using Quest01.Operations;
+using Quest01.Employees;
+using Quest01.Services;
 
 namespace Quest01
 {
@@ -10,7 +19,7 @@ namespace Quest01
             FlatWithAutoProperties FlatAutoProp = new FlatWithAutoProperties();
             FlatAutoProp.FullName = "Зубенко Михаил Петрович";
             FlatAutoProp.Id = 0;
-            FlatAutoProp.Type = Type.fiveRooms;
+            FlatAutoProp.Type = Flats.Type.fiveRooms;
             Employee employeeOne = new Employee();
             employeeOne.FullName = "Зубенко Михаил Петрович";
             employeeOne.Id = 0;
