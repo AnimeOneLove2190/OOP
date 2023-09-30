@@ -39,7 +39,7 @@ namespace Quest01
                 Wage = 63567,
                 DayOfBirth = new DateTime(2004, 02, 17),
                 EmploymentDate = new DateTime(2018, 05, 03)
-        };
+            };
             var employeeThree = new Employee
             {
                 FullName = "Hanji Zoe",
