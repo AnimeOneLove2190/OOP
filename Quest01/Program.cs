@@ -9,6 +9,8 @@ using Quest01.Shapes;
 using Quest01.Operations;
 using Quest01.Employees;
 using Quest01.Services;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Quest01
 {
@@ -137,6 +139,31 @@ namespace Quest01
             //feature542
             var wordsStatistic = textService.GetWordStatistics(text);
             techService.WriteDictionary(wordsStatistic);
+            //feature557
+            var nagatoro = new Person
+            {
+                Name = "Nagatoro",
+                Hobbies = new List<string>()
+            };
+            nagatoro.Hobbies.Add("Cats");
+            nagatoro.Hobbies.Add("Judo");
+            nagatoro.Hobbies.Add("Bullying Hachioji");
+            string json = JsonConvert.SerializeObject(nagatoro, Formatting.Indented);
+            using (StreamWriter file = File.CreateText("Nagatoro.json"))
+            {
+                file.Write(json);
+            }
+            string readFile = string.Empty;
+            using (StreamReader reading = File.OpenText("Nagatoro.Json"))
+            {
+                readFile = reading.ReadToEnd();
+            }
+            var readPerson = JsonConvert.DeserializeObject<Person>(readFile);
+            Console.WriteLine(readPerson.Name);
+            for (int i = 0; i < readPerson.Hobbies.Count; i++)
+            {
+                Console.WriteLine(readPerson.Hobbies[i]);
+            }
         }
     }
 }
