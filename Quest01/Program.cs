@@ -164,6 +164,26 @@ namespace Quest01
             {
                 Console.WriteLine(readPerson.Hobbies[i]);
             }
+            //feature562
+            var houseOne = new House
+            {
+                Address = "Japan, Tokio",
+                Owner = nagatoro
+            };
+            string houseJson = JsonConvert.SerializeObject(houseOne, Formatting.Indented);
+            Console.WriteLine(houseJson);
+            using (StreamWriter someHouse = File.CreateText("Some House.json"))
+            {
+                someHouse.Write(houseJson);
+            }
+            string someHouseInfo = string.Empty;
+            using (StreamReader reading = File.OpenText("Some House.Json"))
+            {
+                someHouseInfo = reading.ReadToEnd();
+            }
+            var readHouse = JsonConvert.DeserializeObject<House>(someHouseInfo);
+            Console.WriteLine($"Address: {readHouse.Address}");
+            Console.WriteLine($"Owner: {readHouse.Owner.Name}");
         }
     }
 }
