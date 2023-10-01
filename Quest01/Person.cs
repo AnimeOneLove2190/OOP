@@ -9,6 +9,7 @@ namespace Quest01
         public string Name { get; set; }
         public int Age { get; set; }
         public int Height { get; set; }
+        public List<string> Hobbies { get; set; }
         public Person()
         {
         }
