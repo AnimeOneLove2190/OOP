@@ -164,6 +164,50 @@ namespace Quest01
             {
                 Console.WriteLine(readPerson.Hobbies[i]);
             }
+            //feature559
+            var shingekiNoKyojin = new Book
+            {
+                Title = "Attack on Titan",
+                Author = "Hajime Isayama",
+                PublicationYear = 2009
+            };
+            var vampireMaid = new Book
+            {
+                Title = "The Maid and the Vampire",
+                Author = "Yujeong Ju, Yi Dolce",
+                PublicationYear = 2019
+            };
+            var daily = new Book
+            {
+                Title = "A Pervert's Daily Life",
+                Author = "﻿Alice Crazy",
+                PublicationYear = 2017
+            };
+            var bookListOne = new List<Book>
+            {
+                shingekiNoKyojin,
+                vampireMaid,
+                daily
+            };
+            string bookListjson = JsonConvert.SerializeObject(bookListOne, Formatting.Indented);
+            Console.WriteLine(bookListjson);
+            using (StreamWriter someBookList = File.CreateText("Some Book List.json"))
+            {
+                someBookList.Write(bookListjson);
+            }
+            string bookListInfo = string.Empty;
+            using (StreamReader readBookList = File.OpenText("Some Book List.json"))
+            {
+                bookListInfo = readBookList.ReadToEnd();
+            }
+            var bookListTwo = JsonConvert.DeserializeObject<List<Book>>(bookListInfo);
+            for (int i = 0; i < bookListTwo.Count; i++)
+            {
+                Console.WriteLine($"Title: {bookListTwo[i].Title}");
+                Console.WriteLine($"Author: {bookListTwo[i].Author}");
+                Console.WriteLine($"PublicationYear: {bookListTwo[i].PublicationYear}");
+                Console.WriteLine();
+            }
         }
     }
 }
