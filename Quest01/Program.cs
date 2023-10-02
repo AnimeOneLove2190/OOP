@@ -279,6 +279,26 @@ namespace Quest01
                 Console.WriteLine($"Duration: {playListTwo.Songs[i].Duration}");
                 Console.WriteLine();
             }
+            //feature560
+            var laputa = new Movie
+            {
+                Title = "Tenkuu no Shiro Laputa",
+                Director = "Hayao Miyazaki",
+                PublicationYear = 1986
+            };
+            XmlSerializer xmlConverterMovie = new XmlSerializer(typeof(Movie));
+            using (FileStream someMovie = new FileStream("Movie.xml", FileMode.OpenOrCreate))
+            {
+                xmlConverterMovie.Serialize(someMovie, laputa);
+            }
+            var laputaPlus = new Movie();
+            using (FileStream readMovie = new FileStream("Movie.xml", FileMode.OpenOrCreate))
+            {
+                laputaPlus = (Movie)xmlConverterMovie.Deserialize(readMovie);
+            }
+            Console.WriteLine(laputaPlus.Title);
+            Console.WriteLine(laputaPlus.Director);
+            Console.WriteLine(laputaPlus.PublicationYear);
         }
     }
 }
