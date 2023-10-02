@@ -105,40 +105,5 @@ namespace Quest01.Services
             }
             return textCopy;
         }
-        public string GetDuration(int techDuration)
-        {
-            string duration = string.Empty;
-            if (techDuration <= 0)
-            {
-                duration = "00 : 00";
-            }
-            int countOfMinutes = techDuration / 60;
-            int countOfSeconds = techDuration % 60;
-            int countOfHours = countOfMinutes / 60;
-            int hasOneTen = countOfSeconds / 10;
-            if (countOfHours == 0)
-            {
-                if (hasOneTen > 0)
-                {
-                    duration = $"{countOfMinutes} : {countOfSeconds}";
-                }
-                else
-                {
-                    duration = $"{countOfMinutes} : 0{countOfSeconds}";
-                }
-            }
-            if (countOfHours > 0)
-            {
-                if (hasOneTen > 0)
-                {
-                    duration = $"{countOfHours} : {countOfMinutes} : {countOfSeconds}";
-                }
-                else
-                {
-                    duration = $"{countOfHours} : {countOfMinutes} : 0{countOfSeconds}";
-                }
-            }
-            return duration;
-        }
     }
 }

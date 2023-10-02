@@ -170,21 +170,18 @@ namespace Quest01
                 Name = "Dream War",
                 Author = "Nomico",
                 TechDuration = 395,
-                Duration = tech.GetDuration(395)
             };
             var autumWind = new Song
             {
                 Name = "Autum Wind",
                 Author = "DVRST",
                 TechDuration = 129,
-                Duration = tech.GetDuration(129)
             };
             var zeroTwo = new Song
             {
                 Name = "Zero Two (So Kawaiina)",
                 Author = "Bemax",
                 TechDuration = 130,
-                Duration = tech.GetDuration(130)
             };
             var songs = new List<Song>
             {
