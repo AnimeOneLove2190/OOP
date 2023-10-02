@@ -130,15 +130,15 @@ namespace Quest01
             string nya = "Ня";
             Console.WriteLine(nya);
             //feature541
-            var techService = new TechnicalService();
+            var tech = new TechnicalService();
             var textService = new TextService();
             var charService = new CharService();
             var text = "Эрвин Смит - 13-й Главнокомандующий Разведкорпуса. Рассудительный, умный и уважаемый человек. Несмотря на аналогичную Леви заботу о членах своего отряда, в случае необходимости без колебаний готов пожертвовать ими ради остального человечества. Он также разработал вид военного построения, позволяющего заранее обнаружить находящегося далеко противника. Также на протяжении большой части своей службы в качестве командира отстаивал независимость Разведкорпуса, тем самым спасая его от расформирования.";
             var charsCount = charService.GetCharStatistics(text);
-            techService.WriteDictionary(charsCount);
+            tech.WriteDictionary(charsCount);
             //feature542
             var wordsStatistic = textService.GetWordStatistics(text);
-            techService.WriteDictionary(wordsStatistic);
+            tech.WriteDictionary(wordsStatistic);
             //feature557
             var nagatoro = new Person
             {
@@ -228,6 +228,56 @@ namespace Quest01
             var readHouse = JsonConvert.DeserializeObject<House>(someHouseInfo);
             Console.WriteLine($"Address: {readHouse.Address}");
             Console.WriteLine($"Owner: {readHouse.Owner.Name}");
+            //feature561
+            var dreamWar = new Song
+            {
+                Name = "Dream War",
+                Author = "Nomico",
+                TechDuration = 395,
+            };
+            var autumWind = new Song
+            {
+                Name = "Autum Wind",
+                Author = "DVRST",
+                TechDuration = 129,
+            };
+            var zeroTwo = new Song
+            {
+                Name = "Zero Two (So Kawaiina)",
+                Author = "Bemax",
+                TechDuration = 130,
+            };
+            var songs = new List<Song>
+            {
+                dreamWar,
+                autumWind,
+                zeroTwo
+            };
+            var playlistOne = new Playlist
+            {
+                Name = "Some Name",
+                Songs = songs
+            };
+            string playlistJson = JsonConvert.SerializeObject(playlistOne, Formatting.Indented);
+            using (StreamWriter somePlaylist = File.CreateText("Some Playlist.json"))
+            {
+                somePlaylist.Write(playlistJson);
+            }
+            string playlistInfo = string.Empty;
+            using (StreamReader readPlaylist = File.OpenText("Some Playlist.json"))
+            {
+                playlistInfo = readPlaylist.ReadToEnd();
+            }
+            var playListTwo = JsonConvert.DeserializeObject<Playlist>(playlistInfo);
+            Console.WriteLine($"Name: {playListTwo.Name}");
+            Console.WriteLine("Songs:");
+            for (int i = 0; i < playListTwo.Songs.Count; i++)
+            {
+                Console.WriteLine($"Name: {playListTwo.Songs[i].Name}");
+                Console.WriteLine($"Author: {playListTwo.Songs[i].Author}");
+                Console.WriteLine($"Duration: {playListTwo.Songs[i].Duration}");
+                Console.WriteLine();
+            }
         }
     }
 }
