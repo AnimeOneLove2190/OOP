@@ -333,6 +333,13 @@ namespace Quest01
             Console.WriteLine(laputaPlus.Title);
             Console.WriteLine(laputaPlus.Director);
             Console.WriteLine(laputaPlus.PublicationYear);
+            //feature540
+            var morzeService = new MorzeService();
+            var textMessage = "Pizdec nahu blyat eti slovari pisat, tam eche probel daze ne pridumali";
+            var morzeMessage = morzeService.TranslateIntoMorze(textMessage);
+            Console.WriteLine(morzeMessage);
+            var textMessageAgain = morzeService.TranslateFromMorze(morzeMessage);
+            Console.WriteLine(textMessageAgain);
         }
     }
 }
