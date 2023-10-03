@@ -279,6 +279,40 @@ namespace Quest01
                 Console.WriteLine($"Duration: {playListTwo.Songs[i].Duration}");
                 Console.WriteLine();
             }
+            //feature558
+            var phoneCase = new Product
+            {
+                Name = "Case for phone",
+                Price = 450,
+                Category = Categories.PhoneCases
+            };
+            var passportCover = new Product
+            {
+                Name = "Passport Cover",
+                Price = 150,
+                Category = Categories.PassportCovers
+            };
+            var productListOne = new List<Product>
+            {
+                phoneCase,
+                passportCover
+            };
+            XmlSerializer xmlConverter = new XmlSerializer(typeof(List<Product>));
+            using (FileStream someProductList = new FileStream("Some Product List.xml", FileMode.OpenOrCreate))
+            {
+                xmlConverter.Serialize(someProductList, productListOne);
+            }
+            var productListTwo = new List<Product>();
+            using (FileStream readProductList = new FileStream("Some Product List.xml", FileMode.OpenOrCreate))
+            {
+                productListTwo = (List<Product>)xmlConverter.Deserialize(readProductList);
+            }
+            for (int i = 0; i < productListTwo.Count; i++)
+            {
+                Console.WriteLine(productListTwo[i].Name);
+                Console.WriteLine(productListTwo[i].Price);
+                Console.WriteLine(productListTwo[i].Category);
+            }
         }
     }
 }
