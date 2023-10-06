@@ -395,6 +395,8 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature566
+            linqService.GetProductWithMinPrice(productListOne);
         }
     }
 }
