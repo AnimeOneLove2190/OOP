@@ -12,6 +12,8 @@ using Quest01.Services;
 using Newtonsoft.Json;
 using System.IO;
 using System.Xml.Serialization;
+using Quest01.Products;
+using Quest01.PlayLists;
 
 namespace Quest01
 {
