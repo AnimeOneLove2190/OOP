@@ -395,6 +395,9 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature569
+            Console.WriteLine();
+            Console.WriteLine("f569:");
         }
     }
 }
