@@ -395,6 +395,10 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature576
+            Console.WriteLine();
+            Console.WriteLine("f576:");
+            linqService.SortStudentsWithFriendsByAge(studentList, 4);
         }
     }
 }
