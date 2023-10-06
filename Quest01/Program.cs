@@ -395,6 +395,10 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature573
+            Console.WriteLine();
+            Console.WriteLine("F573");
+            linqService.GetProductNamesWithPriceHigher(productListOne, 470);
         }
     }
 }
