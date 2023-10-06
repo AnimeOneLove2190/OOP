@@ -343,6 +343,7 @@ namespace Quest01
             Console.WriteLine(morzeMessage);
             var textMessageAgain = morzeService.TranslateFromMorze(morzeMessage);
             Console.WriteLine(textMessageAgain);
+            var linqService = new LinqService();
         }
     }
 }
