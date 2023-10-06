@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Quest01.Interfaces;
+using Quest01.AllPersons;
 
-namespace Quest01
+namespace Quest01.Services
 {
     class PersonConsoleBuilder :  IPersonBuilder
     {
