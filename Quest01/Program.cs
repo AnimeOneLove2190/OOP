@@ -395,6 +395,10 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature572
+            Console.WriteLine();
+            Console.WriteLine("F572:");
+            linqService.GetProductNameList(productListOne, Categories.PassportCovers);
         }
     }
 }
