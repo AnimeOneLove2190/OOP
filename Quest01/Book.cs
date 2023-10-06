@@ -9,5 +9,6 @@ namespace Quest01
         public string Title { get; set; }
         public string Author { get; set; }
         public int PublicationYear { get; set; }
+        public List<Genre> Genres { get; set; }
     }
 }
