@@ -344,6 +344,57 @@ namespace Quest01
             var textMessageAgain = morzeService.TranslateFromMorze(morzeMessage);
             Console.WriteLine(textMessageAgain);
             var linqService = new LinqService();
+            var misato = new Student
+            {
+                Name = "Misato",
+                Age = 29,
+                CountOfFriends = 4,
+                Spezialisation = Spezialitations.EvangelionSquadTacticalOperationsCommander,
+            };
+            var asuna = new Student
+            {
+                Name = "Asuna",
+                Age = 19,
+                CountOfFriends = 14,
+                Spezialisation = Spezialitations.SubleaderOfTheBloodKnightsGuild,
+            };
+            var violet = new Student
+            {
+                Name = "Violet",
+                Age = 18,
+                CountOfFriends = 6,
+                Spezialisation = Spezialitations.AutoRecordingDoll,
+            };
+            var senko = new Student
+            {
+                Name = "Senko",
+                Age = 804,
+                CountOfFriends = 4,
+                Spezialisation = Spezialitations.GoddessOfFertility,
+            };
+            var hanji = new Student
+            {
+                Name = "Hanji",
+                Age = 31,
+                CountOfFriends = 2,
+                Spezialisation = Spezialitations.CommanderOfTheParadiseIslandSurveyCorps,
+            };
+            var jotaro = new Student
+            {
+                Name = "Jotaro",
+                Age = 53,
+                CountOfFriends = 5,
+                Spezialisation = Spezialitations.StandUserStandoPawarZaWarudo,
+            };
+            var studentList = new List<Student>
+            {
+                misato,
+                asuna,
+                violet,
+                senko,
+                hanji,
+                jotaro
+            };
         }
     }
 }
