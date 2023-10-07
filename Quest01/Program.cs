@@ -409,6 +409,9 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("f568:");
             linqService.GetStdentsWithAgeList(studentList, 19);
+            //feature569
+            Console.WriteLine();
+            Console.WriteLine("f569:");
         }
     }
 }
