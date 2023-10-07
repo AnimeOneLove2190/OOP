@@ -153,5 +153,25 @@ namespace Quest01
                 }
             }
         }
+        public void GetProductNameList(List<Product> productList, Categories searcCategory)
+        {
+            if (productList == null || productList.Count == 0)
+            {
+                throw new Exception("LinqService.GetProductNameList: один или несколько параметров содержат null");
+            }
+            var poroductNamesList = productList.Where(x => x.Category == searcCategory).Select(x => x.Name).ToList();
+            if (poroductNamesList == null || productList.Count == 0)
+            {
+                throw new Exception("Студенты с искомым возрастом не найдены");
+            }
+            else
+            {
+                foreach (var name in poroductNamesList)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+
+        }
     }
 }
