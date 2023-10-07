@@ -1,0 +1,25 @@
+--feature550
+CREATE TABLE Position (
+Id INT PRIMARY KEY,
+Name VARCHAR(255),
+);
+CREATE TABLE Department (
+Id INT PRIMARY KEY,
+Name VARCHAR(255),
+);
+CREATE TABLE Employee (
+Id INT PRIMARY KEY,
+FirstName VARCHAR(255) NOT NULL,
+LastName VARCHAR(255) NOT NULL,
+PositionId INT NOT NULL,
+Department INT NOT NULL,
+FOREIGN KEY (PositionId) REFERENCES Position(Id),
+FOREIGN KEY (Department) REFERENCES Department(Id),
+);
+CREATE TABLE PartOfTimeSheet (
+Id INT PRIMARY KEY,
+DayOfDate DATE NOT NULL,
+Hours INT NOT NULL,
+EmployeedId INT NOT NULL,
+FOREIGN KEY (EmployeedId) REFERENCES Employee(Id),
+);
