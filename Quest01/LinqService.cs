@@ -20,7 +20,7 @@ namespace Quest01
             var studentsNameList = studentList.Select(x => x.Name).ToList();
             if (studentsNameList == null || studentsNameList.Count == 0)
             {
-                throw new Exception("Студенты с искомым возрастом не найдены");
+                throw new Exception("Студенты с искомым именем не найдены");
             }
             else
             {
