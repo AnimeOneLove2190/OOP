@@ -416,6 +416,9 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("f570:");
             linqService.GetStudentsListWithSpec(studentList, Spezialitations.AutoRecordingDoll);
+            //feature571
+            Console.WriteLine();
+            Console.WriteLine("f571:");
         }
     }
 }

@@ -133,5 +133,25 @@ namespace Quest01
                 }
             }
         }
+        //feature571
+        public void GetStudentNameList(List<Student> studentList, string searchName)
+        {
+            if (studentList == null || studentList.Count == 0)
+            {
+                throw new Exception("LinqService.GetStudentNameList: один или несколько параметров содержат null");
+            }
+            var studentsNameList = studentList.Select(x => x.Name).ToList();
+            if (studentsNameList == null || studentsNameList.Count == 0)
+            {
+                throw new Exception("Студенты с искомым именем не найдены");
+            }
+            else
+            {
+                foreach (var name in studentsNameList)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+        }
     }
 }
