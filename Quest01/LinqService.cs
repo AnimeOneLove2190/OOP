@@ -5,10 +5,11 @@ using Quest01.AllPersons;
 using Quest01.Employees;
 using Quest01.Products;
 using System.Linq;
+using Quest01.Interfaces;
 
 namespace Quest01
 {
-    class LinqService
+    class LinqService : ILinqService
     {
         public void GetFirstStudentWithName(List<Student> studentList, string searchName)
         {
@@ -38,7 +39,7 @@ namespace Quest01
             var productWithMinPrice = productList.FirstOrDefault(x => x.Price == minPrice);
             if (productWithMinPrice == null)
             {
-                throw new Exception("Студент с искомым возрастом не найден");
+                throw new Exception("Продукт с минимальной ценой не найден (такое вообще возможно?)");
             }
             else
             {
@@ -116,7 +117,7 @@ namespace Quest01
         {
             if (studentList == null || studentList.Count == 0)
             {
-                throw new Exception("LinqService.GetFirstStudentWithName: один или несколько параметров содержат null");
+                throw new Exception("LinqService.GetStudentsListWithSpec: один или несколько параметров содержат null");
             }
             var studentsSpecList = studentList.Where(x => x.Spezialisation == searchSpec).ToList();
             if (studentsSpecList == null || studentsSpecList.Count == 0)
@@ -134,7 +135,7 @@ namespace Quest01
             }
         }
         //feature571
-        public void GetStudentNameList(List<Student> studentList, string searchName)
+        public void GetStudentNameList(List<Student> studentList)
         {
             if (studentList == null || studentList.Count == 0)
             {
@@ -143,7 +144,7 @@ namespace Quest01
             var studentsNameList = studentList.Select(x => x.Name).ToList();
             if (studentsNameList == null || studentsNameList.Count == 0)
             {
-                throw new Exception("Студенты с искомым именем не найдены");
+                throw new Exception("Список имён пуст");
             }
             else
             {
@@ -162,7 +163,7 @@ namespace Quest01
             var poroductNamesList = productList.Where(x => x.Category == searcCategory).Select(x => x.Name).ToList();
             if (poroductNamesList == null || productList.Count == 0)
             {
-                throw new Exception("Студенты с искомым возрастом не найдены");
+                throw new Exception("Товары с выбранной категорией не найдены");
             }
             else
             {
@@ -217,12 +218,12 @@ namespace Quest01
         {
             if (bookList == null || bookList.Count == 0)
             {
-                throw new Exception("LinqService.GetProductWithMinPrice: один или несколько параметров содержат null");
+                throw new Exception("LinqService.GetBookNameListByGenre: один или несколько параметров содержат null");
             }
             var bookNameListByGenre = bookList.Where(x => x.Genres.Contains(searchGenre)).OrderByDescending(x => x.PublicationYear).Select(x => x.Title).ToList();
             if (bookNameListByGenre == null)
             {
-                throw new Exception("Студент с искомым возрастом не найден");
+                throw new Exception("Произведения с выбранным жанром не найдены");
             }
             else
             {
