@@ -458,6 +458,10 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine();
             linqService.GetBookNameListByGenre(bookListOne, Genre.Comedy);
+            //feature576
+            Console.WriteLine();
+            Console.WriteLine("f576:");
+            linqService.SortStudentsWithFriendsByAge(studentList, 4);
         }
     }
 }
