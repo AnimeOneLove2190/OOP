@@ -401,6 +401,10 @@ namespace Quest01
             linqService.GetFirstStudentWithName(studentList, "Violet");
             //feature566
             linqService.GetProductWithMinPrice(productListOne);
+            //feature567
+            Console.WriteLine();
+            Console.WriteLine("f567:");
+            linqService.GetFirstStudentWithAge(studentList, 20);
         }
     }
 }
