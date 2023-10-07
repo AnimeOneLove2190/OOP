@@ -15,12 +15,12 @@ namespace Quest01
         {
             if (productList == null || productList.Count == 0)
             {
-                throw new Exception("LinqService.GetProductWithMinPrice: один или несколько параметров содержат null");
+                throw new Exception("LinqService.GetProductListWihtCategory: один или несколько параметров содержат null");
             }
             var categoryProductList = productList.Where(x => x.Category == searchCategory).ToList();
             if (categoryProductList == null || categoryProductList.Count == 0)
             {
-                throw new Exception("Студенты с искомым возрастом не найдены");
+                throw new Exception("Товары с выбранной категорией не найдены");
             }
             else
             {
