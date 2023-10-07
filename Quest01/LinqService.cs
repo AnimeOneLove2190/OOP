@@ -183,7 +183,8 @@ namespace Quest01
             var productNamesWithPriceHigher = productList.Where(x => x.Price > searchMinPrice).Select(x => x.Name).ToList();
             if (productNamesWithPriceHigher == null || productNamesWithPriceHigher.Count == 0)
             {
-                throw new Exception("Товары с ценой выше указанной не найдены");
+                
+               throw new Exception("Товары с ценой выше указанной не найдены");
             }
             else
             {

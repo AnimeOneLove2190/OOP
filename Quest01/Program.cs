@@ -449,7 +449,7 @@ namespace Quest01
             //feature573
             Console.WriteLine();
             Console.WriteLine("F573");
-            linqService.GetProductNamesWithPriceHigher(productListOne, 470);
+            linqService.GetProductNamesWithPriceHigher(productListOne, 400);
             //feature574
             Console.WriteLine();
             Console.WriteLine("F574:");
