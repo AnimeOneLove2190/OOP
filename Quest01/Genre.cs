@@ -17,6 +17,11 @@ namespace Quest01
         Comedy,
         Vampires,
         Reincarnation,
-        EverydayLife
+        EverydayLife,
+        Anime,
+        Multfilm,
+        Family,
+        Melodrama,
+        DarkFantasy,
     }
 }
