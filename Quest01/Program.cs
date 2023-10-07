@@ -28,7 +28,7 @@ namespace Quest01
                 Id = 0,
                 Type = Flats.Type.fiveRooms
             };
-            var employeeOne = new Employee
+            var mafioznikE = new Employee
             {
                 FullName = "Зубенко Михаил Петрович",
                 Id = 0,
@@ -37,7 +37,7 @@ namespace Quest01
                 DayOfBirth = new DateTime(1983, 07, 18),
                 EmploymentDate = new DateTime(2001, 08, 19)
             };
-            var employeeTwo = new Employee
+            var violetE = new Employee
             {
                 FullName = "Violet Evergarden",
                 Id = 1,
@@ -46,7 +46,7 @@ namespace Quest01
                 DayOfBirth = new DateTime(2004, 02, 17),
                 EmploymentDate = new DateTime(2018, 05, 03)
             };
-            var employeeThree = new Employee
+            var hanjiE = new Employee
             {
                 FullName = "Hanji Zoe",
                 Id = 2,
@@ -55,11 +55,31 @@ namespace Quest01
                 DayOfBirth = new DateTime(1982, 06, 06),
                 EmploymentDate = new DateTime(2018, 10, 15)
             };
+            var misatoE = new Employee
+            {
+                FullName = "Misato Katsuragi",
+                Id = 3,
+                Job = JobTitle.EvangelionSquadTacticalOperationsCommander,
+                Wage = 201576,
+                DayOfBirth = new DateTime(1986, 12, 08),
+                EmploymentDate = new DateTime(2005, 06, 06)
+            };
+            var asunaE = new Employee
+            {
+                FullName = "Yuuki Asuna",
+                Id = 4,
+                Job = JobTitle.SubleaderOfTheBloodKnightsGuild,
+                Wage = 777777,
+                DayOfBirth = new DateTime(2007, 09, 30),
+                EmploymentDate = new DateTime(2023, 02, 24)
+            };
             var employeeList = new List<Employee>
             {
-                employeeOne,
-                employeeTwo,
-                employeeThree
+                mafioznikE,
+                violetE,
+                hanjiE,
+                misatoE,
+                asunaE,
             };
             var employeeService = new EmployeeService();
             var employeesMaxWageList = employeeService.GetEmployeesListMaxWage(employeeList);
@@ -344,42 +364,42 @@ namespace Quest01
             var textMessageAgain = morzeService.TranslateFromMorze(morzeMessage);
             Console.WriteLine(textMessageAgain);
             var linqService = new LinqService();
-            var misato = new Student
+            var misatoS = new Student
             {
                 Name = "Misato",
                 Age = 29,
                 CountOfFriends = 4,
                 Spezialisation = Spezialitations.EvangelionSquadTacticalOperationsCommander,
             };
-            var asuna = new Student
+            var asunaS = new Student
             {
                 Name = "Asuna",
                 Age = 19,
                 CountOfFriends = 14,
                 Spezialisation = Spezialitations.SubleaderOfTheBloodKnightsGuild,
             };
-            var violet = new Student
+            var violetS = new Student
             {
                 Name = "Violet",
                 Age = 18,
                 CountOfFriends = 6,
                 Spezialisation = Spezialitations.AutoRecordingDoll,
             };
-            var senko = new Student
+            var senkoS = new Student
             {
                 Name = "Senko",
                 Age = 804,
                 CountOfFriends = 4,
                 Spezialisation = Spezialitations.GoddessOfFertility,
             };
-            var hanji = new Student
+            var hanjiS = new Student
             {
                 Name = "Hanji",
                 Age = 31,
                 CountOfFriends = 2,
                 Spezialisation = Spezialitations.CommanderOfTheParadiseIslandSurveyCorps,
             };
-            var jotaro = new Student
+            var jotaroS = new Student
             {
                 Name = "Jotaro",
                 Age = 53,
@@ -388,12 +408,12 @@ namespace Quest01
             };
             var studentList = new List<Student>
             {
-                misato,
-                asuna,
-                violet,
-                senko,
-                hanji,
-                jotaro
+                misatoS,
+                asunaS,
+                violetS,
+                senkoS,
+                hanjiS,
+                jotaroS
             };
             //feature565
             Console.WriteLine();
@@ -427,6 +447,10 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("F573");
             linqService.GetProductNamesWithPriceHigher(productListOne, 470);
+            //feature574
+            Console.WriteLine();
+            Console.WriteLine("F574:");
+            linqService.GetEmployeesNameListByPosition(employeeList, JobTitle.AutoRecordingDoll);
         }
     }
 }

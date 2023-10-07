@@ -9,6 +9,10 @@ namespace Quest01.Employees
         Mafia,
         RoyalArmySpecialOfficer,
         AutoRecordingDoll,
-        CommanderOfTheParadiseIslandSurveyCorps
+        CommanderOfTheParadiseIslandSurveyCorps,
+        GoddessOfFertility,
+        EvangelionSquadTacticalOperationsCommander,
+        SubleaderOfTheBloodKnightsGuild,
+        StandUserStandoPawarZaWarudo
     }
 }
