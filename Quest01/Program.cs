@@ -423,6 +423,10 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("F572:");
             linqService.GetProductNameList(productListOne, Categories.PassportCovers);
+            //feature573
+            Console.WriteLine();
+            Console.WriteLine("F573");
+            linqService.GetProductNamesWithPriceHigher(productListOne, 470);
         }
     }
 }
