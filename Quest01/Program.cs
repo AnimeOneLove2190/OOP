@@ -193,19 +193,22 @@ namespace Quest01
             {
                 Title = "Attack on Titan",
                 Author = "Hajime Isayama",
-                PublicationYear = 2009
+                PublicationYear = 2009,
+                Genres = new List<Genre> { Genre.Action, Genre.Adventure, Genre.Cruelty, Genre.Drama, Genre.Fantastic, Genre.Fantasy, Genre.PostApocalyptic }
             };
             var vampireMaid = new Book
             {
                 Title = "The Maid and the Vampire",
                 Author = "Yujeong Ju, Yi Dolce",
-                PublicationYear = 2019
+                PublicationYear = 2019,
+                Genres = new List<Genre> { Genre.Comedy, Genre.Vampires, Genre.Romance, Genre.Fantasy, Genre.Reincarnation}
             };
             var daily = new Book
             {
                 Title = "A Pervert's Daily Life",
                 Author = "﻿Alice Crazy",
-                PublicationYear = 2017
+                PublicationYear = 2017,
+                Genres = new List<Genre> { Genre.Comedy, Genre.Romance, Genre.EverydayLife}
             };
             var bookListOne = new List<Book>
             {
@@ -451,6 +454,10 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("F574:");
             linqService.GetEmployeesNameListByPosition(employeeList, JobTitle.AutoRecordingDoll);
+            //feature575
+            Console.WriteLine();
+            Console.WriteLine();
+            linqService.GetBookNameListByGenre(bookListOne, Genre.Comedy);
         }
     }
 }
