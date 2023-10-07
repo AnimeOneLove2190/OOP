@@ -395,6 +395,10 @@ namespace Quest01
                 hanji,
                 jotaro
             };
+            //feature565
+            Console.WriteLine();
+            Console.WriteLine("feature565:");
+            linqService.GetFirstStudentWithName(studentList, "Violet");
         }
     }
 }
