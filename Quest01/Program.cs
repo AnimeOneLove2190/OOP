@@ -399,6 +399,8 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("feature565:");
             linqService.GetFirstStudentWithName(studentList, "Violet");
+            //feature566
+            linqService.GetProductWithMinPrice(productListOne);
         }
     }
 }
