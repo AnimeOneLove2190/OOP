@@ -405,6 +405,10 @@ namespace Quest01
             Console.WriteLine();
             Console.WriteLine("f567:");
             linqService.GetFirstStudentWithAge(studentList, 20);
+            //feature568
+            Console.WriteLine();
+            Console.WriteLine("f568:");
+            linqService.GetStdentsWithAgeList(studentList, 19);
         }
     }
 }
