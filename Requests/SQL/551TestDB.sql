@@ -1,0 +1,39 @@
+CREATE TABLE SomeUser (
+Id INT PRIMARY KEY,
+Login VARCHAR(255) NOT NULL,
+RegistrationDate DATETIME NOT NULL,
+FullName VARCHAR(255) NOT NULL,
+);
+CREATE TABLE Course (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Description VARCHAR(max) NOT NULL,
+);
+CREATE TABLE Test (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Description VARCHAR(max) NOT NULL,
+CourseId INT NOT NULL,
+FOREIGN KEY (CourseId) REFERENCES Course(Id),
+);
+CREATE TABLE Question (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Description VARCHAR(max) NOT NULL,
+TestId INT NOT NULL,
+FOREIGN KEY (TestId) REFERENCES Test(Id),
+);
+CREATE TABLE PossibleAnswer  (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Flag BIT NOT NULL,
+QuestionId INT NOT NULL,
+FOREIGN KEY (QuestionId) REFERENCES Question(Id),
+);
+CREATE TABLE RecordAnswer  (
+SomeUserId INT NOT NULL,
+PossibleAnswerId INT NOT NULL,
+FOREIGN KEY (SomeUserId) REFERENCES SomeUser(Id),
+FOREIGN KEY (PossibleAnswerId) REFERENCES PossibleAnswer(Id),
+PRIMARY KEY (SomeUserId, PossibleAnswerId)
+);
