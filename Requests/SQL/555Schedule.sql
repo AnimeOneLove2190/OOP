@@ -1,0 +1,38 @@
+CREATE TABLE SomeGroup (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+NumberOfStudents INT NOT NULL,
+);
+CREATE TABLE Student (
+Id INT PRIMARY KEY,
+FullName VARCHAR(255) NOT NULL,
+GroupId INT NOT NULL,
+FOREIGN KEY (GroupId) REFERENCES SomeGroup(Id),
+);
+CREATE TABLE Discipline (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+);
+CREATE TABLE Teacher (
+Id INT PRIMARY KEY,
+FullName VARCHAR(255) NOT NULL,
+DisciplineId INT NOT NULL,
+FOREIGN KEY (DisciplineId) REFERENCES Discipline(Id),
+);
+CREATE TABLE Class (
+Id INT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Number INT NOT NULL,
+);
+CREATE TABLE Lesson (
+DateTimeLesson DATETIME,
+DisciplineId INT NOT NULL,
+TeacherId INT NOT NULL,
+GroupId INT NOT NULL,
+ClassId INT NOT NULL,
+FOREIGN KEY (DisciplineId) REFERENCES Discipline(Id),
+FOREIGN KEY (TeacherId) REFERENCES Teacher(Id),
+FOREIGN KEY (GroupId) REFERENCES SomeGroup(Id),
+FOREIGN KEY (ClassId) REFERENCES Class(Id),
+PRIMARY KEY (DisciplineId, TeacherId, GroupId, ClassId)
+);
