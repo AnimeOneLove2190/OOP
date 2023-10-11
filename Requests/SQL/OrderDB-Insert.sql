@@ -18,7 +18,7 @@ INSERT INTO [dbo].[SomeOrder]
            ,[IsCompleted])
      VALUES
            (1
-           ,2022-01-02-03-04-05
+           ,'2022-02-01 03:04:05'
            ,1)
 GO
 INSERT INTO [dbo].[OrderProduct]

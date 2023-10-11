@@ -29,7 +29,7 @@ INSERT INTO [dbo].[SomeUser]
      VALUES
            (1
            ,'Former Special Forces Officer of the Royal Leidenschaftlig Army'
-           ,2018-04-09-09-00-00
+           ,'2018-04-09'
            ,'Voilet Evergarden')
 GO
 INSERT INTO [dbo].[Question]
@@ -46,12 +46,12 @@ GO
 INSERT INTO [dbo].[PossibleAnswer]
            ([Id]
            ,[Name]
-           ,[Flag]
+           ,[IsRight]
            ,[QuestionId])
      VALUES
-           (1
-           ,'Thank you for being there'
-           ,1
+           (2
+           ,'Any meaningful existing text'
+           ,0
            ,1)
 GO
 INSERT INTO [dbo].[RecordAnswer]

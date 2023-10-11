@@ -1,21 +1,21 @@
 USE [Schedule]
 GO
 
-INSERT INTO [dbo].[Discipline]
-           ([Id]
-           ,[Name])
-     VALUES
-           (1
-           ,'The use of thunder spears in real combat against titans and people')
-GO
 INSERT INTO [dbo].[Teacher]
            ([Id]
-           ,[FullName]
-           ,[DisciplineId])
+           ,[FullName])
      VALUES
            (1
-           ,'Handji Zoe'
-           ,1)
+           ,'Handji Zoe')
+GO
+INSERT INTO [dbo].[Discipline]
+           ([Id]
+           ,[Name]
+		   ,[TeacherId])
+     VALUES
+           (1
+           ,'The use of thunder spears in real combat against titans and people'
+		   ,1)
 GO
 INSERT INTO [dbo].[Class]
            ([Id]
@@ -45,17 +45,23 @@ INSERT INTO [dbo].[Student]
            ,1)
 GO
 INSERT INTO [dbo].[Lesson]
-           ([DateTimeLesson]
+           ([Id]
+		   ,[DateTimeLesson]
            ,[DisciplineId]
            ,[TeacherId]
-           ,[GroupId]
            ,[ClassId])
      VALUES
-           (1011-08-17-11-00-00
-           ,1
+           (1
+		   ,'2011-17-08 11:00:00'
            ,1
            ,1
            ,1)
 GO
-
+INSERT INTO [dbo].[GroupLesson]
+           ([GroupId]
+           ,[LessonId])
+     VALUES
+           (1
+           ,1)
+GO
 

@@ -10,10 +10,12 @@ INSERT INTO [dbo].[Hall]
 GO
 INSERT INTO [dbo].[Row]
            ([Id]
-           ,[Number])
+           ,[Number]
+		   ,[HallId])
      VALUES
            (1
-           ,1)
+           ,1
+		   ,1)
 GO
 INSERT INTO [dbo].[Place]
            ([Id]
@@ -24,15 +26,6 @@ INSERT INTO [dbo].[Place]
            ,100
            ,1)
 GO
-INSERT INTO [dbo].[Ticket]
-           ([Id]
-           ,[IsSold]
-           ,[PlaceId])
-     VALUES
-           (1
-           ,1
-           ,1)
-GO
 INSERT INTO [dbo].[Movie]
            ([Id]
            ,[Name]
@@ -41,21 +34,19 @@ INSERT INTO [dbo].[Movie]
      VALUES
            (1
            ,'Violet Evergarden. Movie'
-           ,'Violet is trying to learn to live without her lover. The second full-length anime based on the series of the same name'
+           ,'Her job is to write letters. Her name is Violet Evergarden. Several years have passed since the end of the war, which inflicted deep wounds on many. The world is gradually regaining peace, people are returning to their normal lives. Violet is trying to learn to live without the person most important to her, but one day she receives a letter, and the flame of hope flares up in her chest again.'
            ,139)
 GO
 INSERT INTO [dbo].[Session]
            ([Id]
            ,[Start]
            ,[MovieId]
-           ,[HallId]
-           ,[DateOfSale])
+           ,[HallId])
      VALUES
            (1
-           ,2020-04-15-00-00-00
+           ,'2020-04-15 10:00:00'
            ,1
-           ,1
-           ,2020-04-14-00-00-00)
+           ,1)
 GO
 INSERT INTO [dbo].[Genre]
            ([Id]
@@ -71,6 +62,21 @@ INSERT INTO [dbo].[MovieGenre]
            ,[GenreId])
      VALUES
            (1
+           ,1)
+GO
+INSERT INTO [dbo].[Ticket]
+           ([Id]
+           ,[IsSold]
+           ,[DateOfSale]
+           ,[Price]
+           ,[PlaceId]
+           ,[SessionId])
+     VALUES
+           (1
+           ,1
+           ,'2020-14-04 21:00:00'
+           ,450
+           ,1
            ,1)
 GO
 
