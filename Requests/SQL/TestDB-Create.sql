@@ -1,32 +1,32 @@
 CREATE TABLE SomeUser (
 Id INT PRIMARY KEY,
 Login VARCHAR(255) NOT NULL,
-RegistrationDate DATETIME NOT NULL,
+RegistrationDate DATE NOT NULL,
 FullName VARCHAR(255) NOT NULL,
 );
 CREATE TABLE Course (
 Id INT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
-Description VARCHAR(max) NOT NULL,
+Description VARCHAR(max),
 );
 CREATE TABLE Test (
 Id INT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
-Description VARCHAR(max) NOT NULL,
+Description VARCHAR(max),
 CourseId INT NOT NULL,
 FOREIGN KEY (CourseId) REFERENCES Course(Id),
 );
 CREATE TABLE Question (
 Id INT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
-Description VARCHAR(max) NOT NULL,
+Description VARCHAR(max),
 TestId INT NOT NULL,
 FOREIGN KEY (TestId) REFERENCES Test(Id),
 );
 CREATE TABLE PossibleAnswer  (
 Id INT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
-Flag BIT NOT NULL,
+IsRight BIT NOT NULL,
 QuestionId INT NOT NULL,
 FOREIGN KEY (QuestionId) REFERENCES Question(Id),
 );

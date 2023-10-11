@@ -6,7 +6,7 @@ IsAvailable BIT NOT NULL,
 );
 CREATE TABLE SomeOrder (
 Id INT PRIMARY KEY,
-OrderDate DATETIME NOT NULL,
+OrderDate DATE NOT NULL,
 IsCompleted BIT NOT NULL,
 );
 CREATE TABLE OrderProduct  (
