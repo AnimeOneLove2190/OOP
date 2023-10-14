@@ -13,7 +13,7 @@ namespace Requests
             //feature553
             //feature554
             //feature578
-            //feature/580/Пока только половина
+            //feature/580/Все задания
         }
     }
 }
