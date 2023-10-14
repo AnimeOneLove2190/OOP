@@ -10,7 +10,7 @@ INSERT INTO [dbo].[SomeUser]
            (1
            ,'Violet'
            ,'violet.evergarden@gmail.ru'
-           ,2018-05-03-00-00-00)
+           ,'2018-03-05')
 GO
 INSERT INTO [dbo].[Task]
            ([Id]

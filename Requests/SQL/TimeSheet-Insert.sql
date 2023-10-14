@@ -20,7 +20,7 @@ INSERT INTO [dbo].[Employee]
            ,[FirstName]
            ,[LastName]
            ,[PositionId]
-           ,[Department])
+           ,[DepartmentId])
      VALUES
            (1
            ,'Violet'
