@@ -13,7 +13,7 @@ Name,
 Description,
 TestId
 FROM Question
-WHERE Description != '' OR Description IS NOT NULL
+WHERE Description != '' AND Description IS NOT NULL
 --580v
 SELECT
 FullName
