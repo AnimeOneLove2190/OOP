@@ -13,17 +13,13 @@ namespace Requests
             //feature553
             //feature554
             //feature578
-            //feature/579/д
-            //feature/579/г
-            //feature/579/в
-            //feature/579/б
-            //feature/579/а
-            //feature/593
-            //feature/594
-            //feature/580/Все задания
+            //feature/579
+            //feature/580
             //feature/581
             //feature/582
             //feature/583
+            //feature/593
+            //feature/594
         }
     }
 }
