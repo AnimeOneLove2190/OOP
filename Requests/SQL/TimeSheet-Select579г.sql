@@ -1,9 +1,9 @@
---579ã
+--579g
 SELECT 
 Employee.Id,
 Employee.FirstName,
 Employee.LastName,
-PartOfTimeSheet.Hours AS CountOfHours,
-PartOfTimeSheet.DayOfDate
+SUM (PartOfTimeSheet.Hours) AS Hours
 FROM Employee
 JOIN PartOfTimeSheet ON Employee.Id = PartOfTimeSheet.EmployeedId
+GROUP BY Employee.Id, Employee.FirstName, Employee.LastName
