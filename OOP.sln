@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quest01", "Quest01\Quest01.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Requests", "Requests\Requests.csproj", "{CF6A3C38-EE1D-48D5-A2A3-2F6832A6ADB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{AB418A4F-5053-4A87-B0E4-6B8FFDD08878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFVaiaa", "EF\EFVaiaa.csproj", "{AB418A4F-5053-4A87-B0E4-6B8FFDD08878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
