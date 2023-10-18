@@ -89,6 +89,32 @@ namespace EFVaiaa
                     RegistrationDate = new DateTime(2005, 09, 04),
                     FullName = "Misato Katsuragi",
                 };
+                context.Add(course);
+                context.SaveChanges();
+                context.Add(test);
+                context.SaveChanges();
+                context.Add(questionOne);
+                context.SaveChanges();
+                context.Add(questionTwo);
+                context.SaveChanges();
+                context.Add(questionThree);
+                context.SaveChanges();
+                context.Add(possibleAnswerOne);
+                context.SaveChanges();
+                context.Add(possibleAnswerTwo);
+                context.SaveChanges();
+                context.Add(possibleAnswerThree);
+                context.SaveChanges();
+                context.Add(possibleAnswerFour);
+                context.SaveChanges(); //Ошибка вылетает здесь
+                context.Add(possibleAnswerFive);
+                context.SaveChanges();
+                context.Add(violet);
+                context.SaveChanges();
+                context.Add(handji);
+                context.SaveChanges();
+                context.Add(misato);
+                context.SaveChanges();
                 violet.PossibleAnswers = new List<PossibleAnswer>
                 {
                     possibleAnswerOne,
@@ -123,34 +149,9 @@ namespace EFVaiaa
                 {
                     handji
                 };
-                context.Add(course);
-                context.SaveChanges();
-                context.Add(test);
-                context.SaveChanges();
-                context.Add(questionOne);
-                context.SaveChanges();
-                context.Add(questionTwo);
-                context.SaveChanges();
-                context.Add(questionThree);
-                context.SaveChanges();
-                context.Add(possibleAnswerOne);
-                context.SaveChanges();
-                context.Add(possibleAnswerTwo);
-                context.SaveChanges();
-                context.Add(possibleAnswerThree);
-                context.SaveChanges();
-                context.Add(possibleAnswerFour);
-                context.SaveChanges(); //Ошибка вылетает здесь
-                context.Add(possibleAnswerFive);
-                context.SaveChanges();
-                context.Add(violet);
-                context.SaveChanges();
-                context.Add(handji);
-                context.SaveChanges();
-                context.Add(misato);
                 context.SaveChanges();
             };
-            Console.WriteLine("Мяв");
+                Console.WriteLine("Мяв");
         }
     }
 }
