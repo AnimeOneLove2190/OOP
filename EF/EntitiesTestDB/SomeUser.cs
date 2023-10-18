@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EFVaiaa.Entities
+namespace EFVaiaa.EntitiesTestDB
 {
     public class SomeUser
     {

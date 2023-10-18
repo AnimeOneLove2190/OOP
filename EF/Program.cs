@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using EFVaiaa.Entities;
+using EFVaiaa.EntitiesTestDB;
 using System.Collections.Generic;
 
 namespace EFVaiaa

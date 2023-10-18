@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
-using EFVaiaa.Entities;
+using EFVaiaa.EntitiesTestDB;
 
 namespace EFVaiaa
 {
