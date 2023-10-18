@@ -140,7 +140,7 @@ namespace EFVaiaa
                 context.Add(possibleAnswerThree);
                 context.SaveChanges();
                 context.Add(possibleAnswerFour);
-                context.SaveChanges();
+                context.SaveChanges(); //Ошибка вылетает здесь
                 context.Add(possibleAnswerFive);
                 context.SaveChanges();
                 context.Add(violet);
