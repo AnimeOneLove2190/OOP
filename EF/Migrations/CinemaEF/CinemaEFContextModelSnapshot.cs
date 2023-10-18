@@ -148,7 +148,7 @@ namespace EFVaiaa.Migrations.CinemaEF
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("DateTime")
+                    b.Property<DateTime?>("DateOfSale")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsSold")
@@ -239,7 +239,7 @@ namespace EFVaiaa.Migrations.CinemaEF
                     b.HasOne("EFVaiaa.EntitiesCinema.Session", "Session")
                         .WithMany("Tickets")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Place");

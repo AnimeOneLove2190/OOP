@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFVaiaa.Migrations.CinemaEF
 {
     [DbContext(typeof(CinemaEFContext))]
-    [Migration("20231018195205_createRowTable")]
-    partial class createRowTable
+    [Migration("20231018204324_fullInit")]
+    partial class fullInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -241,7 +241,7 @@ namespace EFVaiaa.Migrations.CinemaEF
                     b.HasOne("EFVaiaa.EntitiesCinema.Session", "Session")
                         .WithMany("Tickets")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Place");

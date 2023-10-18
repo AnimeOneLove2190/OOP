@@ -20,5 +20,13 @@ namespace EFVaiaa
         {
             optionsBuilder.UseSqlServer("Server=localhost;Database=CinemaEF;Initial Catalog=CinemaEF;Integrated Security=True;");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Session>()
+                 .HasMany(s => s.Tickets)
+                 .WithOne(t => t.Session)
+                 .HasForeignKey(t => t.SessionId)
+                 .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

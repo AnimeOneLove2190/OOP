@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFVaiaa.Migrations.CinemaEF
 {
     [DbContext(typeof(CinemaEFContext))]
-    [Migration("20231018195239_createPlaceTable")]
-    partial class createPlaceTable
+    [Migration("20231018213433_updateTicketTable")]
+    partial class updateTicketTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -150,7 +150,7 @@ namespace EFVaiaa.Migrations.CinemaEF
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("DateTime")
+                    b.Property<DateTime?>("DateOfSale")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsSold")
@@ -241,7 +241,7 @@ namespace EFVaiaa.Migrations.CinemaEF
                     b.HasOne("EFVaiaa.EntitiesCinema.Session", "Session")
                         .WithMany("Tickets")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Place");
