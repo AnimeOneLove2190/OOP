@@ -325,6 +325,7 @@ namespace EFVaiaa
                 context.SaveChanges();
             }
             Console.WriteLine("Мяв590");
+            //system preparation
         }
     }
 }
