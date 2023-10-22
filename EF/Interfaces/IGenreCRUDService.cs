@@ -7,10 +7,10 @@ namespace EFVaiaa.Interfaces
 {
     interface IGenreCRUDService
     {
-        public void Create();
-        public GenreView Get();
+        public void Create(GenreCreate genreCreate);
+        public GenreView Get(int id);
         public List<GenreView> GetList();
-        public void Update();
-        public void Delete();
+        public void Update(GenreUpdate genreUpdate);
+        public void Delete(int id);
     }
 }
