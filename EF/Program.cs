@@ -696,11 +696,10 @@ namespace EFVaiaa
             var places = hallCRUDService.GetAllPlacesInHall(1);
             for (int i= 0; i < places.Count; i++)
             {
-                Console.WriteLine($"Id: {places[i].Id}");
-                Console.WriteLine($"Capacity: {places[i].Capacity}");
-                Console.WriteLine($"Number: {places[i].Number}");
-                Console.WriteLine($"RowId: {places[i].RowId}");
+                Console.WriteLine($"Id: {places[i].Id} Capacity: {places[i].Capacity} Number: {places[i].Number} RowId: {places[i].RowId}");
             }
+            var seansService = new SeansService();
+            seansService.CreateSeans(1, 3, 350);
         }
     }
 }

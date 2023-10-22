@@ -8,7 +8,7 @@ using System.Linq;
 namespace EFVaiaa.Services
 {
     public class HallCRUDService
-    {
+    { 
         public void CreateHall(HallCreate hallCreate)
         {
             if (string.IsNullOrEmpty(hallCreate.Name))
@@ -273,18 +273,22 @@ namespace EFVaiaa.Services
                     Number = x.Number,
                     HallId = x.HallId,
                 }).ToList();
-                List<PlaceView> places = null;
+                List<PlaceView> allPlaces = new List<PlaceView>();
                 for (int i = 0; i < rows.Count; i++)
                 {
-                    places = context.Places.Where(x => x.RowId == rows[i].Id).Select(x => new PlaceView
+                    var places = context.Places.Where(x => x.RowId == rows[i].Id).Select(x => new PlaceView
                     {
                         Id = x.Id,
                         Capacity = x.Capacity,
                         Number = x.Number,
                         RowId = x.RowId,
                     }).ToList();
+                    for (int j = 0; j < places.Count; j++)
+                    {
+                        allPlaces.Add(places[j]);
+                    }
                 }
-                return places;
+                return allPlaces;
             }
         }
     }
