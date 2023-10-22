@@ -670,27 +670,37 @@ namespace EFVaiaa
             //Console.WriteLine("Мяв590");
             //system preparation
             //feature/595
-            var genreCRUDService = new GenreCRUDService();
-            var createComedy = new GenreCreate
+            //var genreCRUDService = new GenreCRUDService();
+            //var createComedy = new GenreCreate
+            //{
+            //    Name = "Comedy",
+            //    Description = "Жанр художественного произведения, характеризующийся юмористическим или сатирическим подходами, и также вид драмы, в котором специфически разрешается момент действенного конфликта или борьбы"
+            //};
+            //var createAnime = new GenreCreate
+            //{
+            //    Name = "Anime"
+            //};
+            //var updateDrama = new GenreUpdate
+            //{
+            //    Id = 3,
+            //    Name = "Drama",
+            //    Description = "литературный (драматический) и сценический жанр. Получил особое распространение в литературе XVIII−XXI веков, постепенно вытеснив другой жанр драматургии — трагедию, противопоставив ему преимущественно бытовой сюжет и более приближенный к обыденной реальности стиль."
+            //};
+            //genreCRUDService.Create(createComedy);
+            //genreCRUDService.Create(createAnime);
+            //genreCRUDService.Update(updateDrama);
+            //genreCRUDService.Delete(6);
+            //Console.WriteLine("Мяв595");
+            //feature/596
+            var hallCRUDService = new HallCRUDService();
+            var places = hallCRUDService.GetAllPlacesInHall(1);
+            for (int i= 0; i < places.Count; i++)
             {
-                Name = "Comedy",
-                Description = "Жанр художественного произведения, характеризующийся юмористическим или сатирическим подходами, и также вид драмы, в котором специфически разрешается момент действенного конфликта или борьбы"
-            };
-            var createAnime = new GenreCreate
-            {
-                Name = "Anime"
-            };
-            var updateDrama = new GenreUpdate
-            {
-                Id = 3,
-                Name = "Drama",
-                Description = "литературный (драматический) и сценический жанр. Получил особое распространение в литературе XVIII−XXI веков, постепенно вытеснив другой жанр драматургии — трагедию, противопоставив ему преимущественно бытовой сюжет и более приближенный к обыденной реальности стиль."
-            };
-            genreCRUDService.Create(createComedy);
-            genreCRUDService.Create(createAnime);
-            genreCRUDService.Update(updateDrama);
-            genreCRUDService.Delete(6);
-            Console.WriteLine("Мяв595");
+                Console.WriteLine($"Id: {places[i].Id}");
+                Console.WriteLine($"Capacity: {places[i].Capacity}");
+                Console.WriteLine($"Number: {places[i].Number}");
+                Console.WriteLine($"RowId: {places[i].RowId}");
+            }
         }
     }
 }
