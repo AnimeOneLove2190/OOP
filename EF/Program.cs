@@ -493,7 +493,6 @@ namespace EFVaiaa
                 context.SaveChanges();
             }
             Console.WriteLine("Мяв591");
-            Console.WriteLine("Мяв590");
             //system preparation
         }
     }
