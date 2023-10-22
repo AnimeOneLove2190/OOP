@@ -4,10 +4,11 @@ using System.Text;
 using EFVaiaa.DTOCinema;
 using EFVaiaa.EntitiesCinema;
 using System.Linq;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class SeansService
+    class SeansService : ISeansService
     {
         readonly HallCRUDService hallCRUDService = new HallCRUDService();
         public void CreateSeans(int hallId, int sessionId, int ticketPrice)

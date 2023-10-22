@@ -4,10 +4,11 @@ using System.Text;
 using System.Linq;
 using EFVaiaa.DTOCinema;
 using EFVaiaa.EntitiesCinema;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class SessionCRUDService
+    class SessionCRUDService : ISessionCRUDService
     {
         public void CreateSession(SessionCreate sessionCreate)
         {

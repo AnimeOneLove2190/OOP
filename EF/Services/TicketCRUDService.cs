@@ -4,10 +4,11 @@ using System.Text;
 using EFVaiaa.DTOCinema;
 using EFVaiaa.EntitiesCinema;
 using System.Linq;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    public class TicketCRUDService
+    public class TicketCRUDService : ITicketCDRUDService
     {
         public void CreateTicket(TicketCreate ticketCreate)
         {

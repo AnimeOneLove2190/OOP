@@ -4,10 +4,11 @@ using System.Text;
 using EFVaiaa.DTOCinema;
 using EFVaiaa.EntitiesCinema;
 using System.Linq;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    public class MovieCRUDService
+    public class MovieCRUDService : IMovieCRUDService
     {
         public void CreateMovie(MovieCreate movieCreate)
         {
