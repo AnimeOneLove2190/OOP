@@ -330,172 +330,172 @@ namespace EFVaiaa
             //}
             //Console.WriteLine("Мяв590");
             //feature/591
-            using (TaskTrackEFContext context = new TaskTrackEFContext())
-            {
-                var violet = new SomeUserTasks
-                {
-                    Name = "Violet",
-                    Email = "violet.evergarden@gmail.ru",
-                    RegistrationDate = new DateTime(2018, 03, 05)
-                };
-                context.Add(violet);
-                context.SaveChanges();
-                var handji = new SomeUserTasks
-                {
-                    Name = "Handji",
-                    Email = "hanji@gmail.com",
-                    RegistrationDate = new DateTime(2015, 09, 09)
-                };
-                context.Add(handji);
-                context.SaveChanges();
-                var misato = new SomeUserTasks
-                {
-                    Name = "Misato",
-                    Email = "misato@gmail.com",
-                    RegistrationDate = new DateTime(2005, 09, 09)
-                };
-                context.Add(misato);
-                context.SaveChanges();
-                var violetRole = new Role
-                {
-                    Name = "Auto Recording Doll"
-                };
-                context.Add(violetRole);
-                context.SaveChanges();
-                var handjiRole = new Role
-                {
-                    Name = "14th Commander-in-Chief of the Survey Corps"
-                };
-                context.Add(handjiRole);
-                context.SaveChanges();
-                var misatoRole = new Role
-                {
-                    Name = "Evangelion Squad Tactical Operations Commander"
-                };
-                context.Add(misatoRole);
-                context.SaveChanges();
-                var taskOne = new Task
-                {
-                    Name = "Find Gilbert",
-                    IsCompleted = true,
-                };
-                context.Add(taskOne);
-                context.SaveChanges();
-                var taskTwo = new Task
-                {
-                    Name = "Get both your hands back",
-                    IsCompleted = false,
-                };
-                context.Add(taskTwo);
-                context.SaveChanges();
-                var taskThree = new Task
-                {
-                    Name = "Prevent the third impact",
-                    IsCompleted = false,
-                };
-                context.Add(taskThree);
-                context.SaveChanges();
-                var taskFour = new Task
-                {
-                    Name = "Save Eldia",
-                    IsCompleted = true,
-                };
-                context.Add(taskFour);
-                context.SaveChanges();
-                var taskFive = new Task
-                {
-                    Name = "Save humanity",
-                    IsCompleted = false,
-                };
-                context.Add(taskFive);
-                context.SaveChanges();
-                var taskSix = new Task
-                {
-                    Name = "Head Wille",
-                    IsCompleted = true,
-                };
-                context.Add(taskSix);
-                context.SaveChanges();
-                var taskSeven = new Task
-                {
-                    Name = "Recover after the war",
-                    IsCompleted = true,
-                };
-                context.Add(taskSeven);
-                context.SaveChanges();
-                violet.Tasks = new List<Task>
-                {
-                    taskOne,
-                    taskTwo,
-                    taskSeven
-                };
-                handji.Tasks = new List<Task>
-                {
-                    taskFour,
-                    taskFive
-                };
-                misato.Tasks = new List<Task>
-                {
-                    taskThree,
-                    taskFive,
-                    taskSix
-                };
-                taskOne.SomeUsers = new List<SomeUserTasks>
-                {
-                    violet
-                };
-                taskTwo.SomeUsers = new List<SomeUserTasks>
-                {
-                    violet
-                };
-                taskThree.SomeUsers = new List<SomeUserTasks>
-                {
-                    misato
-                };
-                taskFour.SomeUsers = new List<SomeUserTasks>
-                {
-                    handji
-                };
-                taskFive.SomeUsers = new List<SomeUserTasks>
-                {
-                    handji,
-                    misato
-                };
-                taskSix.SomeUsers = new List<SomeUserTasks>
-                {
-                    misato
-                };
-                taskSeven.SomeUsers = new List<SomeUserTasks>
-                {
-                    violet
-                };
-                violet.Roles = new List<Role>
-                {
-                    violetRole
-                };
-                handji.Roles = new List<Role>
-                {
-                    handjiRole
-                };
-                misato.Roles = new List<Role>
-                {
-                    misatoRole
-                };
-                violetRole.SomeUsers = new List<SomeUserTasks>
-                {
-                    violet
-                };
-                handjiRole.SomeUsers = new List<SomeUserTasks>
-                {
-                    handji
-                };
-                misatoRole.SomeUsers = new List<SomeUserTasks>
-                {
-                    misato
-                };
-                context.SaveChanges();
-            }
-            Console.WriteLine("Мяв591");
+            //using (TaskTrackEFContext context = new TaskTrackEFContext())
+            //{
+            //    var violet = new SomeUserTasks
+            //    {
+            //        Name = "Violet",
+            //        Email = "violet.evergarden@gmail.ru",
+            //        RegistrationDate = new DateTime(2018, 03, 05)
+            //    };
+            //    context.Add(violet);
+            //    context.SaveChanges();
+            //    var handji = new SomeUserTasks
+            //    {
+            //        Name = "Handji",
+            //        Email = "hanji@gmail.com",
+            //        RegistrationDate = new DateTime(2015, 09, 09)
+            //    };
+            //    context.Add(handji);
+            //    context.SaveChanges();
+            //    var misato = new SomeUserTasks
+            //    {
+            //        Name = "Misato",
+            //        Email = "misato@gmail.com",
+            //        RegistrationDate = new DateTime(2005, 09, 09)
+            //    };
+            //    context.Add(misato);
+            //    context.SaveChanges();
+            //    var violetRole = new Role
+            //    {
+            //        Name = "Auto Recording Doll"
+            //    };
+            //    context.Add(violetRole);
+            //    context.SaveChanges();
+            //    var handjiRole = new Role
+            //    {
+            //        Name = "14th Commander-in-Chief of the Survey Corps"
+            //    };
+            //    context.Add(handjiRole);
+            //    context.SaveChanges();
+            //    var misatoRole = new Role
+            //    {
+            //        Name = "Evangelion Squad Tactical Operations Commander"
+            //    };
+            //    context.Add(misatoRole);
+            //    context.SaveChanges();
+            //    var taskOne = new Task
+            //    {
+            //        Name = "Find Gilbert",
+            //        IsCompleted = true,
+            //    };
+            //    context.Add(taskOne);
+            //    context.SaveChanges();
+            //    var taskTwo = new Task
+            //    {
+            //        Name = "Get both your hands back",
+            //        IsCompleted = false,
+            //    };
+            //    context.Add(taskTwo);
+            //    context.SaveChanges();
+            //    var taskThree = new Task
+            //    {
+            //        Name = "Prevent the third impact",
+            //        IsCompleted = false,
+            //    };
+            //    context.Add(taskThree);
+            //    context.SaveChanges();
+            //    var taskFour = new Task
+            //    {
+            //        Name = "Save Eldia",
+            //        IsCompleted = true,
+            //    };
+            //    context.Add(taskFour);
+            //    context.SaveChanges();
+            //    var taskFive = new Task
+            //    {
+            //        Name = "Save humanity",
+            //        IsCompleted = false,
+            //    };
+            //    context.Add(taskFive);
+            //    context.SaveChanges();
+            //    var taskSix = new Task
+            //    {
+            //        Name = "Head Wille",
+            //        IsCompleted = true,
+            //    };
+            //    context.Add(taskSix);
+            //    context.SaveChanges();
+            //    var taskSeven = new Task
+            //    {
+            //        Name = "Recover after the war",
+            //        IsCompleted = true,
+            //    };
+            //    context.Add(taskSeven);
+            //    context.SaveChanges();
+            //    violet.Tasks = new List<Task>
+            //    {
+            //        taskOne,
+            //        taskTwo,
+            //        taskSeven
+            //    };
+            //    handji.Tasks = new List<Task>
+            //    {
+            //        taskFour,
+            //        taskFive
+            //    };
+            //    misato.Tasks = new List<Task>
+            //    {
+            //        taskThree,
+            //        taskFive,
+            //        taskSix
+            //    };
+            //    taskOne.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        violet
+            //    };
+            //    taskTwo.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        violet
+            //    };
+            //    taskThree.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        misato
+            //    };
+            //    taskFour.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        handji
+            //    };
+            //    taskFive.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        handji,
+            //        misato
+            //    };
+            //    taskSix.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        misato
+            //    };
+            //    taskSeven.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        violet
+            //    };
+            //    violet.Roles = new List<Role>
+            //    {
+            //        violetRole
+            //    };
+            //    handji.Roles = new List<Role>
+            //    {
+            //        handjiRole
+            //    };
+            //    misato.Roles = new List<Role>
+            //    {
+            //        misatoRole
+            //    };
+            //    violetRole.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        violet
+            //    };
+            //    handjiRole.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        handji
+            //    };
+            //    misatoRole.SomeUsers = new List<SomeUserTasks>
+            //    {
+            //        misato
+            //    };
+            //    context.SaveChanges();
+            //}
+            //Console.WriteLine("Мяв591");
             //system preparation
             //using (CinemaEFContext context = new CinemaEFContext())
             //{
