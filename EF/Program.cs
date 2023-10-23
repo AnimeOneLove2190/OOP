@@ -692,14 +692,33 @@ namespace EFVaiaa
             //genreCRUDService.Delete(6);
             //Console.WriteLine("Мяв595");
             //feature/596
-            var hallCRUDService = new HallCRUDService();
-            var places = hallCRUDService.GetAllPlacesInHall(1);
-            for (int i= 0; i < places.Count; i++)
-            {
-                Console.WriteLine($"Id: {places[i].Id} Capacity: {places[i].Capacity} Number: {places[i].Number} RowId: {places[i].RowId}");
-            }
-            var seansService = new SeansService();
-            seansService.CreateSeans(1, 3, 350);
+            //var hallCRUDService = new HallCRUDService();
+            //var places = hallCRUDService.GetAllPlacesInHall(1);
+            //for (int i= 0; i < places.Count; i++)
+            //{
+            //    Console.WriteLine($"Id: {places[i].Id} Capacity: {places[i].Capacity} Number: {places[i].Number} RowId: {places[i].RowId}");
+            //}
+            //var seansService = new SeansService();
+            //seansService.CreateSeans(1, 3, 350);
+            //feature/597
+            var statisticService = new StatiscicService();
+            var techService = new TechService();
+            int allIncome = statisticService.GetIncomeForWholeTime();
+            Console.WriteLine(allIncome);
+            int incomeForSpecifiedPeriod = statisticService.GetIncomeForSpecifiedPeriod(new DateTime(2015, 01, 01), new DateTime(2025, 01, 01));
+            Console.WriteLine(incomeForSpecifiedPeriod);
+            var incomeAllTimeByMovie = statisticService.GetIncomeForWholeTimeByMovie(1);
+            Console.WriteLine(incomeAllTimeByMovie);
+            var incomeForSpecifiedPeriodByMovie = statisticService.GetIncomeForSpecifiedPeriodByMovie(1, new DateTime(2020, 04, 14, 00, 30, 00), new DateTime(2020, 04, 15));
+            Console.WriteLine(incomeForSpecifiedPeriodByMovie);
+            var dictionaryIncomesAllTime = statisticService.GetDictionaryIncomesAllTime();
+            techService.WriteDictionary(dictionaryIncomesAllTime);
+            var dictionaryIncomesByMovies = statisticService.GetDictionaryIncomesByMovies();
+            techService.WriteDictionary(dictionaryIncomesByMovies);
+            var dictionaryTicketsByMovies = statisticService.GetDictionaryCountOfTicketsByMovies();
+            techService.WriteDictionary(dictionaryTicketsByMovies);
+            var dictionaryOfDictionaries = statisticService.GetDictionaryIncomesByMoviesByHallsAllTime();
+            techService.WriteDictionary(dictionaryOfDictionaries);
         }
     }
 }
