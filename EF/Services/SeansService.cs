@@ -10,7 +10,7 @@ namespace EFVaiaa.Services
 {
     class SeansService : ISeansService
     {
-        private readonly HallCRUDService hallCRUDService = new HallCRUDService();
+        private readonly HallCRUDService hallCRUDService;
         public SeansService()
         {
             this.hallCRUDService = new HallCRUDService();
