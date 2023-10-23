@@ -10,7 +10,11 @@ namespace EFVaiaa.Services
 {
     class SeansService : ISeansService
     {
-        readonly HallCRUDService hallCRUDService = new HallCRUDService();
+        private readonly HallCRUDService hallCRUDService = new HallCRUDService();
+        public SeansService()
+        {
+            this.hallCRUDService = new HallCRUDService();
+        }
         public void CreateSeans(int hallId, int sessionId, int ticketPrice)
         {
             var allPlaces = hallCRUDService.GetAllPlacesInHall(hallId);
