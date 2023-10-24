@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using EFVaiaa.EntitiesCinema;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class StatiscicService
+    class StatiscicService : IStatiscicService
     {
-        readonly private TechService techService;
-        public StatiscicService()
-        {
-            this.techService = new TechService();
-        }
-        public int GetIncomeForWholeTime()
+        public int GetIncome()
         {
             using (CinemaEFContext context = new CinemaEFContext())
             {
@@ -22,7 +18,7 @@ namespace EFVaiaa.Services
                 return sumOfPrice;
             }
         }
-        public int GetIncomeForSpecifiedPeriod(DateTime startDate, DateTime endDate)
+        public int GetIncome(DateTime startDate, DateTime endDate)
         {
             using (CinemaEFContext context = new CinemaEFContext())
             {
@@ -31,7 +27,7 @@ namespace EFVaiaa.Services
                 return sumOfPrice;
             }
         }
-        public int GetIncomeForWholeTimeByMovie(int movieId)
+        public int GetIncome(int movieId)
         {
             using (CinemaEFContext context = new CinemaEFContext())
             {
@@ -50,7 +46,7 @@ namespace EFVaiaa.Services
                 return income;
             }
         }
-        public int GetIncomeForSpecifiedPeriodByMovie(int movieId, DateTime startDate, DateTime endDate)
+        public int GetIncome(int movieId, DateTime startDate, DateTime endDate)
         {
             using (CinemaEFContext context = new CinemaEFContext())
             {
@@ -155,7 +151,7 @@ namespace EFVaiaa.Services
                 return dictionaryIncomes;
             }
         }
-        public Dictionary<int, int> GetDictionaryIncomesByFilteredListMovies(List<Movie> filteredMovies)
+        public Dictionary<int, int> GetIncome(List<Movie> filteredMovies)
         {
             using (CinemaEFContext context = new CinemaEFContext())
             {
@@ -213,7 +209,7 @@ namespace EFVaiaa.Services
                             throw new Exception($"GetDictionaryIncomesByMoviesByHallsAllTime: Movies not found");
                         }
                     }
-                    dictionaryOfDictionaries.Add(halls[i].Id, GetDictionaryIncomesByFilteredListMovies(filteredMovieList));
+                    dictionaryOfDictionaries.Add(halls[i].Id, GetIncome(filteredMovieList));
                 }
                 return dictionaryOfDictionaries;
             }

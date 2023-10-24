@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class TechService
+    class TechService : ITechService
     {
         public void WriteDictionary(Dictionary<DateTime, int> someDictionary)
         {
