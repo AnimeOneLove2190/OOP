@@ -703,13 +703,13 @@ namespace EFVaiaa
             //feature/597
             var statisticService = new StatiscicService();
             var techService = new TechService();
-            int allIncome = statisticService.GetIncomeForWholeTime();
+            int allIncome = statisticService.GetIncome();
             Console.WriteLine(allIncome);
-            int incomeForSpecifiedPeriod = statisticService.GetIncomeForSpecifiedPeriod(new DateTime(2015, 01, 01), new DateTime(2025, 01, 01));
+            int incomeForSpecifiedPeriod = statisticService.GetIncome(new DateTime(2015, 01, 01), new DateTime(2025, 01, 01));
             Console.WriteLine(incomeForSpecifiedPeriod);
-            var incomeAllTimeByMovie = statisticService.GetIncomeForWholeTimeByMovie(1);
+            var incomeAllTimeByMovie = statisticService.GetIncome(1);
             Console.WriteLine(incomeAllTimeByMovie);
-            var incomeForSpecifiedPeriodByMovie = statisticService.GetIncomeForSpecifiedPeriodByMovie(1, new DateTime(2020, 04, 14, 00, 30, 00), new DateTime(2020, 04, 15));
+            var incomeForSpecifiedPeriodByMovie = statisticService.GetIncome(1, new DateTime(2020, 04, 14, 00, 30, 00), new DateTime(2020, 04, 15));
             Console.WriteLine(incomeForSpecifiedPeriodByMovie);
             var dictionaryIncomesAllTime = statisticService.GetDictionaryIncomesAllTime();
             techService.WriteDictionary(dictionaryIncomesAllTime);
