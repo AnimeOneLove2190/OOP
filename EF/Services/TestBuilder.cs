@@ -7,7 +7,7 @@ using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class TestBuilder 
+    class TestBuilder : ITestBuilder
     {
         public int CreateQuestionAndGetId(QuestBuilderCreate questBuilder)
         {
