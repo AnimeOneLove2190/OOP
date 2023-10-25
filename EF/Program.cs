@@ -7,6 +7,8 @@ using EFVaiaa.EntitiesTaskTrack;
 using EFVaiaa.DTOCinema;
 using EFVaiaa.Interfaces;
 using EFVaiaa.Services;
+using EFVaiaa.Services.TestDBServices;
+using EFVaiaa.DTOTestDB;
 
 namespace EFVaiaa
 {
@@ -692,14 +694,27 @@ namespace EFVaiaa
             //genreCRUDService.Delete(6);
             //Console.WriteLine("Мяв595");
             //feature/596
-            var hallCRUDService = new HallCRUDService();
-            var places = hallCRUDService.GetAllPlacesInHall(1);
-            for (int i= 0; i < places.Count; i++)
+            //var hallCRUDService = new HallCRUDService();
+            //var places = hallCRUDService.GetAllPlacesInHall(1);
+            //for (int i= 0; i < places.Count; i++)
+            //{
+            //    Console.WriteLine($"Id: {places[i].Id} Capacity: {places[i].Capacity} Number: {places[i].Number} RowId: {places[i].RowId}");
+            //}
+            //var seansService = new SeansService();
+            //seansService.CreateSeans(1, 3, 350);
+            //feature/598
+            var recordAnswerCRDService = new RecordAnswerCRUDService();
+            //var recordAnswerCreate = new RecordAnswerCreate
+            //{
+            //    SomeUserId = 3,
+            //    PossibleAnswerId = 5
+            //};
+            //recordAnswerCRDService.CreateRecordAnswer(recordAnswerCreate);
+            var allRecordAnswers = recordAnswerCRDService.GetRecordAnswersList();
+            for (int i= 0; i < allRecordAnswers.Count; i++)
             {
-                Console.WriteLine($"Id: {places[i].Id} Capacity: {places[i].Capacity} Number: {places[i].Number} RowId: {places[i].RowId}");
+                Console.WriteLine($"User: {allRecordAnswers[i].SomeUserId}){allRecordAnswers[i].SomeUserName} - Answer: {allRecordAnswers[i].PossibleAnswerId}){allRecordAnswers[i].PossibleAnswerName}");
             }
-            var seansService = new SeansService();
-            seansService.CreateSeans(1, 3, 350);
         }
     }
 }

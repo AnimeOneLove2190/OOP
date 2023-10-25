@@ -10,6 +10,11 @@ namespace EFVaiaa.Services.TestDBServices
 {
     class PossibleAnswerCRUDService
     {
+        private readonly SomeUserCRUDService someUserCRUDService;
+        public PossibleAnswerCRUDService()
+        {
+            this.someUserCRUDService = new SomeUserCRUDService();
+        }
         public void CreatePossibleAnswer(PossibleAnswerCreate possibleAnswerCreate)
         {
             if (possibleAnswerCreate == null)
@@ -50,7 +55,8 @@ namespace EFVaiaa.Services.TestDBServices
                     Id = possibleAnswer.Id,
                     Name = possibleAnswer.Name,
                     IsRight = possibleAnswer.IsRight,
-                    QuestionId = possibleAnswer.QuestionId
+                    QuestionId = possibleAnswer.QuestionId,
+                    SomeUsers = possibleAnswer.SomeUsers
                 };
             }
         }
@@ -63,7 +69,8 @@ namespace EFVaiaa.Services.TestDBServices
                     Id = x.Id,
                     Name = x.Name,
                     IsRight = x.IsRight,
-                    QuestionId = x.QuestionId
+                    QuestionId = x.QuestionId,
+                    SomeUsers = x.SomeUsers
                 }
                 ).ToList();
                 return possibleAnswers;
