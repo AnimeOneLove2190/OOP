@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using EFVaiaa.EntitiesTestDB;
 using System.Linq;
+using EFVaiaa.Interfaces;
 
 namespace EFVaiaa.Services
 {
-    class TestBuilder
+    class TestBuilder 
     {
         public int CreateQuestionAndGetId(QuestBuilderCreate questBuilder)
         {
