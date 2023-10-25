@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using EFVaiaa.EntitiesTestDB;
 using EFVaiaa.DTOTestDB;
-using EFVaiaa.Interfaces;
+using EFVaiaa.Interfaces.TestDB;
 using System.Linq;
 
 namespace EFVaiaa.Services.TestDBServices
 {
-    class TestCRUDService
+    class TestCRUDService : ITestCRUDService
     {
         public void CreateTest(TestCreate testCreate)
         {

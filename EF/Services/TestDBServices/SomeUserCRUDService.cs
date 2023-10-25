@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using EFVaiaa.EntitiesTestDB;
 using EFVaiaa.DTOTestDB;
-using EFVaiaa.Interfaces;
+using EFVaiaa.Interfaces.TestDB;
 using System.Linq;
 
 namespace EFVaiaa.Services.TestDBServices
 {
-    class SomeUserCRUDService
+    class SomeUserCRUDService : ISomeUserCRUDService
     {
         public void CreateSomeUser(SomeUserCreate someUserCreate)
         {

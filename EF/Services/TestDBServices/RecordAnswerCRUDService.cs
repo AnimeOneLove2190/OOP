@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using EFVaiaa.EntitiesTestDB;
 using EFVaiaa.DTOTestDB;
-using EFVaiaa.Interfaces;
+using EFVaiaa.Interfaces.TestDB;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFVaiaa.Services.TestDBServices
 {
-    class RecordAnswerCRUDService
+    class RecordAnswerCRUDService : IRecordAnswerCRUDService
     {
         private readonly SomeUserCRUDService someUserCRUDService;
         private readonly PossibleAnswerCRUDService possibleAnswerCRUDService;
