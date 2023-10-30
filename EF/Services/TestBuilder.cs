@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using EFVaiaa.EntitiesTestDB;
+using EFVaiaa.DTOTestDB1;
 using System.Linq;
 using EFVaiaa.Interfaces;
 
@@ -37,22 +38,28 @@ namespace EFVaiaa.Services
             }
             using (TestDBEFContext context = new TestDBEFContext())
             {
+                var possibleAnswers = new List<PossibleAnswer>();
+                for (int i = 0; i < questBuilder.PossibleAnswers.Count; i++)
+                {
+                    var possibleAnswer = new PossibleAnswer
+                    {
+                        Id = questBuilder.PossibleAnswers[i].Id,
+                        Name = questBuilder.PossibleAnswers[i].Name,
+                        IsRight = questBuilder.PossibleAnswers[i].IsRight,
+                        QuestionId = questBuilder.PossibleAnswers[i].QuestionId,
+                    };
+                    possibleAnswers.Add(possibleAnswer);
+                }
                 var question = new Question
                 {
                     Name = questBuilder.Name,
                     Description = questBuilder.Description,
                     TestId = questBuilder.TestId,
-                    PossibleAnswers = questBuilder.PossibleAnswers
+                    PossibleAnswers = possibleAnswers
                 };
                 context.Add(question);
                 context.SaveChanges();
-                var questions = context.Questions.ToList();
-                var justCreatedQuestion = new Question();
-                for (int i = questions.Count - 1; i < questions.Count; i++)
-                {
-                    justCreatedQuestion = questions[i];
-                }
-                return justCreatedQuestion.Id;
+                return question.Id;
             }
         }
         public void CreateTest(TestBuilderCreate testCreate)
@@ -79,12 +86,24 @@ namespace EFVaiaa.Services
             }
             using (TestDBEFContext context = new TestDBEFContext())
             {
+                var questions = new List<Question>();
+                for (int i = 0; i < testCreate.Questions.Count; i++)
+                {
+                    var question = new Question
+                    {
+                        Id = testCreate.Questions[i].Id,
+                        Name = testCreate.Questions[i].Name,
+                        Description = testCreate.Questions[i].Description,
+                        TestId = testCreate.Questions[i].TestId,
+                    };
+                    questions.Add(question);
+                }
                 var test = new Test
                 {
                     Name = testCreate.Name,
                     Description = testCreate.Description,
                     CourseId = testCreate.CourseId,
-                    Questions = testCreate.Questions
+                    Questions = questions
                 };
                 context.Add(test);
                 context.SaveChanges();

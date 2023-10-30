@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using EFVaiaa.EntitiesTestDB;
 
-namespace EFVaiaa
+namespace EFVaiaa.DTOTestDB1
 {
     class TestBuilderCreate
     {
@@ -13,6 +13,6 @@ namespace EFVaiaa
         public string Name { get; set; }
         public string Description { get; set; }
         public int CourseId { get; set; }
-        public List<Question> Questions { get; set; }
+        public List<QuestionStub> Questions { get; set; }
     }
 }

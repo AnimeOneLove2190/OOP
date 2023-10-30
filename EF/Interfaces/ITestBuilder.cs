@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using EFVaiaa.DTOTestDB1;
 
 namespace EFVaiaa.Interfaces
 {
